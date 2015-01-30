@@ -23,6 +23,7 @@ var blocks;
             this.makeBackgroundSprite();
             //TODO: find out if there is a better way of passing bitmapdata to tilesprite
             game.add.tileSprite(0, 0, game.width, game.height, game.cache.getBitmapData('backgroundBitMap'));
+            console.log('lol');
         };
         Game.prototype.render = function () {
         };

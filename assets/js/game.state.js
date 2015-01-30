@@ -22,14 +22,13 @@ var blocks;
             game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
             this.makeBackgroundSprite();
             //TODO: find out if there is a better way of passing bitmapdata to tilesprite
-            game.add.tileSprite(0, 0, game.width, game.height, game.cache.getBitmapData('backgroundBitMap'));
-            console.log('lol');
+            game.add.tileSprite(0, 0, game.width, game.height, this.backgroundBitMap);
         };
         Game.prototype.render = function () {
         };
         Game.prototype.makeBackgroundSprite = function () {
             var game = this.game;
-            var bmd = game.make.bitmapData(Game.SQUARE_SIDE, Game.SQUARE_SIDE, 'backgroundBitMap', true);
+            var bmd = this.backgroundBitMap = game.make.bitmapData(Game.SQUARE_SIDE, Game.SQUARE_SIDE, 'backgroundBitMap');
             var ctx = bmd.ctx;
             ctx.strokeStyle = '#444466';
             ctx.lineWidth = 1;

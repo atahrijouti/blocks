@@ -1,8 +1,10 @@
 /// <reference path="phaser.d.ts" />
-/// <reference path="game.state.ts" />
+/// <reference path="config.ts" />
+/// <reference path="boot.state.ts" />
+var game;
 window.onload = function () {
-    var game = new Phaser.Game(480, 800, Phaser.AUTO, 'blocks-game');
-    game.state.add('game', blocks.Game);
-    game.state.start('game');
+    game = new Phaser.Game(c.Game.WIDTH, c.Game.HEIGHT, Phaser.AUTO, 'blocks-game');
+    game.state.add('boot', blocks.Boot);
+    game.state.start('boot');
 };
 //# sourceMappingURL=main.js.map

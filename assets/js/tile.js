@@ -1,3 +1,5 @@
+/// <reference path="config.ts" />
+/// <reference path="phaser.d.ts" />
 var blocks;
 (function (blocks) {
     var Tile = (function () {

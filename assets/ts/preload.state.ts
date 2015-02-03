@@ -1,6 +1,6 @@
+/// <reference path="config.ts" />
 /// <reference path="phaser.d.ts" />
 /// <reference path="game.state.ts" />
-/// <reference path="config.ts" />
 
 module blocks {
     export class Preload extends Phaser.State {

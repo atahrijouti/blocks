@@ -7,7 +7,6 @@ module blocks {
         preload(){
             this.makeBackgroundSprite();
             this.makeSquareSprite();
-
         }
         create(){
             var game = this.game;
@@ -20,34 +19,30 @@ module blocks {
             var ctx = bmd.ctx;
             ctx.strokeStyle = '#444466';
             ctx.lineWidth = 1;
-
             ctx.beginPath();
-
             ctx.moveTo(0,0);
             ctx.lineTo(0,c.Game.SQUARE_SIDE);
-
             ctx.moveTo(0,c.Game.SQUARE_SIDE);
             ctx.lineTo(c.Game.SQUARE_SIDE,c.Game.SQUARE_SIDE);
-
             ctx.stroke();
-
             ctx.closePath();
             bmd.render();
-
         }
         makeSquareSprite(){
             var game = this.game;
-
             var bmd = game.make.bitmapData(c.Game.SQUARE_SIDE,c.Game.SQUARE_SIDE,'squareBitMap',true);
-
-            bmd.ctx.fillStyle = '#2378ef';
-            bmd.ctx.fillRect(0,0,c.Game.SQUARE_SIDE,c.Game.SQUARE_SIDE);
-
-            bmd.ctx.strokeStyle = '#efefef';
-            bmd.ctx.lineWidth = 1;
-
-            bmd.ctx.closePath();
-
+            var ctx = bmd.ctx;
+            ctx.fillStyle = '#2378ef';
+            ctx.fillRect(0,0,c.Game.SQUARE_SIDE,c.Game.SQUARE_SIDE);
+            ctx.strokeStyle = '#1060D1';
+            ctx.lineWidth = 8;
+            ctx.beginPath();
+            ctx.moveTo(c.Game.SQUARE_SIDE,0);
+            ctx.lineTo(c.Game.SQUARE_SIDE,c.Game.SQUARE_SIDE);
+            ctx.moveTo(0,c.Game.SQUARE_SIDE);
+            ctx.lineTo(c.Game.SQUARE_SIDE,c.Game.SQUARE_SIDE);
+            ctx.stroke();
+            ctx.closePath();
             bmd.render();
         }
     }
